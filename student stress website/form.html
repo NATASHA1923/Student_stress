@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="survey.css">
+        <title>Student Stress Analysis Survey</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --color-white:#f3f3f3;
+    --color-darkblue:#796ec8;
+    --color-darkblue-alpha:rgb(223, 182, 205);
+    --color-green:#001308;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-white);
+    margin: 0;
+}
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: rgb(223, 182, 205);
+    background-image: url(/developers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#title{
+    color: var(--color-green);
+    font-weight: 600;
+    
+    
+}
+h1{
+    font-weight: 400;
+    line-height: 1.2;
+}
+p{
+    font-size: 1.125rem;
+}
+h1,p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+label{
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+label[for="stress-level"] {
+    color: #000;
+}
+
+label[for="physical-level"] {
+    color: #000;
+}
+
+
+
+
+input,button,select,textarea{
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.container{
+    width: 100%;
+    margin: 3.125rem auto 0 auto;
+    padding:1.8rem 1rem;
+}
+
+.header{
+    padding: 0 0.625rem;
+    margin-bottom: 1.875rem;
+    text-align: center;
+}
+#description{
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
+}
+.clue{
+    margin-left: 0.25rem;
+    font-size: 0.9rem;
+    color: #e4e4e4;
+}
+#quest{
+    color: rgb(17, 11, 2);
+    font-size: 1.5rem;
+}
+form{
+    background: var(--color-darkblue-alpha);
+    border-radius: 0.25rem;
+}
+
+@media (min-width: 480px){
+    form{
+        padding: 2.5rem;
+    }
+}
+.form-group{
+    margin: 0 auto 1.25rem auto;
+    padding: 0.25rem;
+}
+.formControl{
+    display: block;
+    width: 100%;
+    height: 2.375rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+.formControl:focus{
+    border-color:rgb(2, 2, 21);
+    outline: 0;
+    box-shadow:0 0 0 0.2rem rgba(0,123,255,0.25)
+}
+.inputRadio,
+.checkbox
+{
+    display: inline-block;
+    margin-right: 0.625rem;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+
+}
+.textarea{
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.15rem;
+    outline: none;
+    border-color: rgb(249, 128, 195);
+    border-radius: 5px;
+}
+
+.stress-level-button.selected {
+    background-color: #007bff; /* Change to your desired color */
+    color: #fff; /* Change to your desired text color */
+}
+
+.physical-level-button.selected {
+    background-color: #007bff; /* Change to your desired color */
+    color: #fff; /* Change to your desired text color */
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    padding:0.5rem 0.75rem;
+    background: var(--color-green);
+    color: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rgb(254, 254, 255);
+    border: none;
+}
+
+@media (min-width:576px){
+    .container{
+        max-width: 540px;
+    }
+}
+@media (min-width:800px){
+    .container{
+        max-width: 760px;
+    }
+}
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 id="title">
+                    Student Stress Analysis Survey
+                </h1>
+                <p id="description">
+                    Thank you for participating in this survey to help us
+                    understand student stress levels.
+                </p>
+                <div id="google_translate_element"></div>
+
+                <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+                <script type="text/javascript"
+                    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+            </header>
+            <form
+                action="https://app.powerbi.com/groups/me/reports/384dc36d-e0eb-43af-8af1-110adb4bdd06/ReportSectionee96c45ad9e9b301fc30?experience=power-bi"
+                id="survey-form">
+
+                <!-- Text section -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="formControl"
+                        placeholder="Enter your name" required>
+                </div>
+                <!-- end of text section -->
+
+                <!-- Type Email section -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email"
+                        class="formControl" placeholder="Enter your Email"
+                        required>
+                </div>
+                <!-- end of Email section -->
+
+                <!-- Type Number section -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" class="formControl"
+                        placeholder="Enter your age" required>
+                </div>
+                <!-- end of Number section -->
+
+                <!-- Radio button section -->
+                <div class="form-group">
+                    <label for="stress-level">Stress Level</label>
+                    <div class="stress-level-buttons">
+                        <button type="button" class="stress-level-button"
+                            value="1">1</button>
+                        <button type="button" class="stress-level-button"
+                            value="2">2</button>
+                        <button type="button" class="stress-level-button"
+                            value="3">3</button>
+                        <button type="button" class="stress-level-button"
+                            value="4">4</button>
+                        <button type="button" class="stress-level-button"
+                            value="5">5</button>
+                        <button type="button" class="stress-level-button"
+                            value="6">6</button>
+                        <button type="button" class="stress-level-button"
+                            value="7">7</button>
+                        <button type="button" class="stress-level-button"
+                            value="8">8</button>
+                        <button type="button" class="stress-level-button"
+                            value="9">9</button>
+                        <button type="button" class="stress-level-button"
+                            value="10">10</button>
+                    </div>
+                    <input type="hidden" name="stress-level" id="stress-level">
+                </div>
+                <!-- End of radio button -->
+
+                <!-- Checkbox section -->
+                <div class="form-group">
+                    <p id="quest">What are the main sources of stress for you?
+                        (Select all that apply)</p>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="academic-pressure"> Academic
+                        Pressure
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="academic-pressure"> Exams
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="peer-pressure"> Peer
+                        Pressure
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="family-issues"> Family
+                        Issues
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="family-issues"> Finacial
+                        Issues
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="family-issues"> Health
+                        Concern
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="bullying"> Bullying
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="extracurricular-activities">
+                        Extracurricular Activities
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="extracurricular-activities">
+                        Others
+                    </label>
+                </div>
+                <!-- End of checkbox section -->
+
+                <div class="form-group">
+                    <p id="quest">Which of the following do you apply when you
+                        feel stressed? (select all that apply)</p>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="academic-pressure"> Exercise
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="academic-pressure">
+                        Medidation
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="peer-pressure"> Talking to
+                        Someone
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="family-issues"> Time
+                        Management
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="family-issues"> Healthy
+                        Eating
+                    </label>
+                    <label for>
+                        <input type="checkbox" name="stress-sources"
+                            class="checkbox" value="extracurricular-activities">
+                        Others
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <p id="quest">Have you been bullied?</p>
+                    <label for>
+                        <input type="radio" name="stress-level" value="low"
+                            class="inputRadio" checked> yes
+                    </label>
+                    <label for>
+                        <input type="radio" name="stress-level" value="medium"
+                            class="inputRadio"> no
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="physical-level">
+                        How often do you experience physical symptoms of stress
+                        (e.g., headaches, insomnia, fatigue)? (1 - Rarely, 10 -
+                        Frequently)</label>
+                    <div class="physical-level-buttons">
+                        <button type="button" class="physical-level-button"
+                            value="1">1</button>
+                        <button type="button" class="physical-level-button"
+                            value="2">2</button>
+                        <button type="button" class="physical-level-button"
+                            value="3">3</button>
+                        <button type="button" class="physical-level-button"
+                            value="4">4</button>
+                        <button type="button" class="physical-level-button"
+                            value="5">5</button>
+                        <button type="button" class="physical-level-button"
+                            value="6">6</button>
+                        <button type="button" class="physical-level-button"
+                            value="7">7</button>
+                        <button type="button" class="physical-level-button"
+                            value="8">8</button>
+                        <button type="button" class="physical-level-button"
+                            value="9">9</button>
+                        <button type="button" class="physical-level-button"
+                            value="10">10</button>
+                    </div>
+                    <input type="hidden" name="physical-level"
+                        id="physical-level">
+                </div>
+
+                <div class="form-group">
+                    <p id="quest">Do you feel that the school adequately
+                        addresses mental health and stress-related issues?</p>
+                    <label for>
+                        <input type="radio" name="physical-level" value="low"
+                            class="inputRadio" checked> yes
+                    </label>
+                    <label for>
+                        <input type="radio" name="physical-level" value="medium"
+                            class="inputRadio"> no
+                    </label>
+                </div>
+
+                <!-- Textarea section -->
+                <div class="form-group">
+                    <p id="quest">What additional support or resources would you
+                        like to see implemented to help students manage
+                        stress</p>
+                    <textarea name="comments" cols="30" rows="5" id="comments"
+                        class="textarea"
+                        placeholder="Enter any additional comments or feedback here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <a
+                        href="https://app.powerbi.com/groups/me/reports/384dc36d-e0eb-43af-8af1-110adb4bdd06/ReportSectionee96c45ad9e9b301fc30?experience=power-bi">
+                        <button type="submit" id="submit"
+                            class="btn">Submit</button></a>
+                </div>
+            </form>
+        </div>
+        <script>
+           document.addEventListener('DOMContentLoaded', function() {
+    const stressLevelButtons = document.querySelectorAll('.stress-level-button');
+    const stressLevelInput = document.getElementById('stress-level');
+
+    stressLevelButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const stressLevel = this.value;
+            stressLevelInput.value = stressLevel;
+
+            // Toggle the selected class
+            stressLevelButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const stressLevelButtons = document.querySelectorAll('.physical-level-button');
+    const stressLevelInput = document.getElementById('physical-level');
+
+    stressLevelButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const stressLevel = this.value;
+            stressLevelInput.value = stressLevel;
+
+            // Toggle the selected class
+            stressLevelButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+});
+
+
+        </script>
+    </body>
+</html>
